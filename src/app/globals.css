@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-dm-serif), ui-serif, Georgia, serif;
+
+  --color-background: #FBF7F2;
+  --color-foreground: #1C1C1E; /* deep charcoal */
+
+  --color-primary: #E06D53; /* terracotta/coral */
+  --color-secondary: #2C4C3B; /* deep forest green */
+  --color-alert: #C46210; /* warm amber/rust */
+  --color-locked: #D1CBC3; /* muted warm grey */
+  --color-locked-text: #9B968F; /* muted warm grey text */
+
+  /* Surface colors */
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F3EEE7;
+
+  --radius-card: 20px;
+  --radius-pill: 999px;
+  
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-[999px] font-medium transition-all duration-200 text-center inline-block cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:opacity-90;
+  }
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary/5;
+  }
+  
+  .card {
+    @apply bg-surface rounded-[20px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)];
+  }
 }
