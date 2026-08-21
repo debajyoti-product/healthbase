@@ -440,7 +440,7 @@ export default function InsightDetail() {
                     <div>
                       <h4 className="text-sm font-medium text-foreground">Your Doctor</h4>
                       <p className="text-xs text-foreground/60 mt-0.5 leading-relaxed">
-                        We trust our answers. Show this to your physician to have a more informed conversation.
+                        Our answers are research backed. Show this to your physician to have a more informed conversation.
                       </p>
                     </div>
                   </div>
