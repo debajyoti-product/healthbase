@@ -37,16 +37,7 @@ export default function Welcome() {
 
   return (
     <main className="flex flex-col min-h-screen p-6 pt-12 pb-12">
-      <div className="flex justify-end">
-        <button 
-          onClick={() => router.push("/auth/phone")}
-          className="text-sm font-medium text-foreground/50 hover:text-foreground/80 px-4 py-2"
-        >
-          Skip
-        </button>
-      </div>
-
-      <div className="flex-1 flex flex-col justify-center items-center -mt-12 relative overflow-hidden">
+      <div className="flex-1 flex flex-col justify-center items-center relative overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
